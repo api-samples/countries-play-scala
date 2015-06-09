@@ -8,4 +8,5 @@ scalaVersion := "2.11.6"
 
 resolvers += "scalaz-bintray" at "https://dl.bintray.com/scalaz/releases"
 
+libraryDependencies += filters
 libraryDependencies += specs2 % Test
