@@ -10,7 +10,7 @@ object Countries extends Controller {
 
   def country(cca2: String) = Action {
     countries
-      .find(_ \ "cca2" == JsString(cca2))
+      .find(json => (json \ "cca2").as[String] == cca2)
       .map(Ok(_))
       .getOrElse(NotFound(s"Country not found: $cca2"))
   }
