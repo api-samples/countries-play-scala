@@ -4,3 +4,5 @@
 
 GET     /countries                  controllers.Countries.index
 GET     /countries/:cca2            controllers.Countries.country(cca2)
+
+GET     /xdomain/proxy.html         controllers.Assets.at(path="/public/xdomain", file="proxy.html")
