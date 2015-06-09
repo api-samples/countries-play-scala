@@ -14,4 +14,8 @@ object Countries extends Controller {
       .map(Ok(_))
       .getOrElse(NotFound(s"Country not found: $cca2"))
   }
+
+  def index = Action {
+    Ok(Json.obj("items" -> JsArray(countries)))
+  }
 }

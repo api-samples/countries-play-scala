@@ -2,4 +2,5 @@
 # This file defines all application routes (Higher priority routes first)
 # ~~~~
 
+GET     /countries                  controllers.Countries.index
 GET     /countries/:cca2            controllers.Countries.country(cca2)
