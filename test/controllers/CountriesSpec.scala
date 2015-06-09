@@ -31,5 +31,17 @@ class CountriesSpec extends PlaySpecification {
         case None => failure
       }
     }
+
+    "limit attributes to: name, cca2" in new WithApplication {
+      route(FakeRequest(controllers.routes.Countries.index())) match {
+        case Some(response) =>
+          status(response) must beEqualTo(OK)
+          val expectedKeySets = Seq(Set("name", "cca2"))
+          val observedKeySets = (contentAsJson(response) \ "items").as[Seq[JsObject]].map(_.keys).distinct
+          observedKeySets mustEqual expectedKeySets
+        case None => failure
+      }
+    }
+
   }
 }
