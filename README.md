@@ -19,6 +19,8 @@ per assignment https://bitbucket.org/mikaelhg/interview-countries
 # Run it locally
 `sbt run`
 
+Get an index of countries at http://localhost:9000/countries
+
 Check out the details of Finland at http://localhost:9000/countries/FI
 
 # Deploy on Heroku
